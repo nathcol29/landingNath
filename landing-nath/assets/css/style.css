@@ -1,0 +1,711 @@
+/* /*Police */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap');
+
+/* color variable */
+
+:root {
+    --couleur-principale: #1a202c;
+    --couleur-secondaire: #57bab7;
+    --couleur-titre: #EDF2F7;
+    --couleur-alt: #718096;
+}
+
+/* Generale */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--couleur-principale);
+}
+
+/* header */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding:40px 100px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+}
+
+header .logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--couleur-titre);
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+header .logo .logo__img {
+    width: 50px;
+    height: 50px;
+    margin: 6px;
+}
+
+header nav {
+    position: relative;
+}
+
+header nav ul {
+    position: relative;
+    display: flex;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+     background: var(--couleur-secondaire);
+    color: var(--couleur-titre);
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    padding: 15px 35px ;
+    text-decoration: none;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+
+
+
+header nav ul li a:hover {
+    color: var(--couleur-secondaire);
+}
+
+/* MAIN SECTION */
+section {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 100px;
+}
+
+section .contentBox {
+    position: relative;
+    max-width: 600px;
+    z-index: 1000;
+}
+
+section .contentBox h2 {
+    font-size: 3.75rem;
+    color: var(--couleur-titre);
+    text-transform: uppercase;
+}
+
+section .contentBox p {
+    font-size: 1.1rem;
+    color: var(--couleur-titre);
+}
+
+section .contentBox .countDown {
+    display: flex;
+    margin: 20px 0;
+}
+
+section .contentBox .countDown .time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--couleur-titre);
+    margin-right: 20px;
+    font-size: 3rem;
+    min-width: 110px;
+    font-weight: 700;
+    padding: 10px 5px 15px;
+    border-radius:4px ;
+    -webkit-border-radius:4px ;
+    -moz-border-radius:4px ;
+    -ms-border-radius:4px ;
+    -o-border-radius:4px ;
+    color: var(--couleur-secondaire);
+}
+
+section .contentBox .countDown .time span {
+    margin-top: -10px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--couleur-principale);
+}
+
+section .contentBox a {
+    position: relative;
+    margin-top: 10px;
+    display: inline-block;
+    background: var(--couleur-secondaire);
+    color: var(--couleur-titre);
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    padding: 15px 35px ;
+    text-decoration: none;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+
+section .imgBox img {
+    position: relative;
+    max-width: 1095px;
+    width: 100%;
+    margin-top: 300px;
+    z-index: 2;
+}
+
+section .wave {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* newsletter */
+
+.newsletter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    padding: 60px;
+    background: var(--couleur-titre);
+    z-index: 10000;
+    box-shadow: 0 0 0 100vh rgba(49, 39, 71, 0.95);
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.newsletter.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.newsletter .newsletter__title h2 {
+    font-size: 3rem;
+    color: var(--couleur-principale);
+}
+
+.newsletter .newsletter__title p {
+    font-size: 1.25rem;
+    color: var(--couleur-principale);
+}
+
+.newsletter .newsletter__form {
+    margin-top: 20px;
+}
+
+.newsletter .newsletter__form input {
+    padding: 10px;
+    outline: none;
+    width: 300px;
+    font-size: 1.125rem;
+    border: 1px solid #999;
+}
+
+.newsletter .newsletter__form input[type="submit"] {
+    padding: 10px;
+    outline: none;
+    width: 140px;
+    color: var(--couleur-titre);
+    background-color: var(--couleur-secondaire);
+    border: 1px solid var(--couleur-secondaire);
+    letter-spacing: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.newsletter .newsletter__policy {
+    margin-top: 10px;
+}
+
+.newsletter .newsletter__policy p {
+    font-size: 0.75rem;
+}
+
+.newsletter .close {
+    position: absolute;
+    top:20px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/* footer */
+footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .copy {
+    position: absolute;
+    bottom: 40px;
+    color: var(--couleur-titre);
+    z-index: 1000;
+}
+
+footer .copy a {
+    text-decoration: none;
+    color: var(--couleur-principale);
+}
+
+footer .copy a:hover {
+    text-decoration:underline ;
+}
+
+/* ###########################################
+                RESPONSIVE
+
+ Using MIN-WIDTH and MAX-WIDTH/ utilisation min-width et max-width
+###################################################################*/
+
+/* extra small devices (portraits phones, lees than 320px) */
+@media (max-width: 380.98px) {
+    /* header */
+    header {
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+    }
+    header nav {
+        margin-top: 10px;
+    }
+    header nav ul li a {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        padding: 10px 5px;
+    }
+
+    /* main section */
+    section {
+        flex-direction: column;
+        padding-top: 160px;
+        height: auto;
+    }
+    section .contentBox{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section .contentBox h2 {
+        font-size: 1.6rem;
+        text-align: center;
+        line-height: 1.1;
+    }
+    section .contentBox p {
+        font-size: 0.85rem;
+        text-align: center;
+        margin-top: 10px;
+    }
+    section .contentBox .countDown {
+        margin: 10px 0px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    section .contentBox .countDown .time {
+     margin-top: 5px;
+     margin-right: 0px;
+     font-size: 1.5rem;
+     border-radius: 50%;
+     -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+     -ms-border-radius: 50%;
+     -o-border-radius: 50%;
+}
+section .contentBox .countDown .time span {
+   font-size: 1.1rem;
+}
+section .contentBox a {
+    width: 150px;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    padding: 15px;
+}
+section .imgBox img {
+   margin-top: 0;
+    width: 300px;
+    bottom: 45px;
+}
+section .wawe {
+    width: 870px;
+    }
+
+/* newletter */
+.newsletter {
+    width: 80%;
+    padding: 30px;
+    text-align: center;
+}
+.newsletter .newsletter__title h2{
+    font-size: 1.5rem;
+    line-height: 1;
+}
+.newsletter .newsletter__title p{
+    font-size: 0.95rem;
+    line-height: 1;
+    margin-top: 10px;
+}
+.newsletter .newsletter__form input {
+    width: 80%;
+    font-size: 0.8rem;
+   }
+
+.newsletter .newsletter__form input[type="submit"] {
+    margin-top:10px ;
+    width: 80%;
+}
+.newsletter .close {
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+}
+
+/* fotter */
+footer {
+    font-size: 0.85rem;
+}
+footer .copy a {
+    text-decoration: none;
+    color: #EDF2F7 ;
+    /* j'ai changé la couleur du @ car ma vague ne va pas aussi
+    haut que chez el et on ne voyait plus la typo */
+ }
+}
+/* *************************************** */
+
+ @media (min-width: 381px) and (max-width: 575.98px){
+    /* header */
+    header{
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+header nav {
+    margin-top: 20px;
+}
+header nav ul li a {
+    font-size: 1.25rem;
+    letter-spacing: 1.5px;
+    padding: 12px 8px;
+}
+
+/* main section */
+section {
+    flex-direction: column;
+    padding-top: 180px;
+    height: auto;
+}
+section .contentBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section .contentBox h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    
+}
+section .contentBox p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 10px;
+}
+section .contentBox .countDown {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section .contentBox .countDown .time {
+ margin-top: 10px;
+ margin-right: 0px;
+ font-size: 3rem;
+
+}
+section .contentBox .countDown .time span {
+font-size: 1.2rem;
+}
+section .contentBox a {
+width: 200px;
+margin-top: 0px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size:1.25rem;
+letter-spacing: 1.5px;
+padding: 15px;
+}
+section .imgBox img {
+margin-top: 0;
+width: 300px;
+bottom: 45px;
+}
+section .wawe {
+width: 870px;
+}
+
+/* newletter */
+.newsletter {
+    width: 80%;
+    padding: 30px;
+    text-align: center;
+}
+.newsletter .newsletter__title h2{
+    font-size: 1.5rem;
+    line-height: 1;
+}
+.newsletter .newsletter__title p{
+    font-size: 0.95rem;
+    line-height: 1;
+    margin-top: 10px;
+}
+.newsletter .newsletter__form input {
+    width: 80%;
+    font-size: 0.8rem;
+   }
+
+.newsletter .newsletter__form input[type="submit"] {
+    margin-top:10px ;
+    width: 80%;
+}
+
+    .newsletter .close {
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+}
+
+/* fotter */
+/* footer {
+    font-size: 0.85rem;
+} */
+footer .copy a {
+    text-decoration: none;
+    color: #EDF2F7 ;
+}
+ }
+
+/* ********************************************************* */
+
+ /* small devices (landscape phones,  576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px){
+       /* header */
+       header{
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+    }
+    header nav {
+        margin-top: 20px;
+    }
+    header nav ul li a {
+        font-size: 1.25rem;
+        letter-spacing: 1.5px;
+        padding: 12px 8px;
+    } 
+
+    /* main section */
+section {
+    flex-direction: column;
+    padding-top: 180px;
+    height: auto;
+}
+section .contentBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section .contentBox h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    
+}
+section .contentBox p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 10px;
+}
+section .contentBox .countDown {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section .contentBox .countDown .time {
+ margin-top: 10px;
+ margin-right: 0px;
+ font-size: 3rem;
+
+}
+section .contentBox .countDown .time span {
+font-size: 1.2rem;
+}
+section .contentBox a {
+width: 200px;
+margin-top: 0px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size:1.25rem;
+letter-spacing: 1.5px;
+padding: 15px;
+}
+section .imgBox img {
+margin-top: 0;
+width: 300px;
+bottom: 45px;
+}
+section .wawe {
+width: 870px;
+}
+/* newletter */
+
+.newsletter .newsletter__title h2{
+    font-size: 2rem;
+    }
+.newsletter .newsletter__title p{
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-top: 10px;
+}
+
+footer .copy a {
+    text-decoration: none;
+    color: #EDF2F7 ;
+}
+}
+
+/* ******************************************************** */
+
+
+ /* méduim devices (tablets 768px and up) */
+ @media (min-width: 768px) and (max-width: 991.98px){
+/* header */
+header nav ul li a{
+    font-size: 1.25rem;
+    letter-spacing: 1.5px;
+    padding: 12px 8px;
+}
+/* main section */
+    section {
+        flex-direction: column;
+        padding-top: 130px;
+        height: auto;
+    }
+    section .contentBox {
+        margin-bottom: 0px;
+    }
+section .contentBox h2{
+    font-size: 4rem;
+}
+section .contentBox a{
+    width: 200px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    letter-spacing: 1.5px;
+    padding: 15px;
+}
+section .imgBox img {
+    margin-top: -45px;
+    width: 700px;
+}
+section .wave {
+    width: 1480px;
+}
+
+/* footer */
+footer {
+    font-size: 1.5rem;
+}
+}
+/* ************************************************************* */
+
+ /* large devices (destops 992px and up) */
+ @media (min-width: 992px) and (max-width: 1199.98px){
+    /* header */
+header nav ul li a{
+    font-size: 1.25rem;
+    letter-spacing: 1.5px;
+    padding: 12px 8px;
+}
+/* main section */
+section {
+    flex-direction: column;
+    padding-top: 150px;
+    height: auto;
+}
+section .contentBox {
+    margin-bottom: 0px;
+}
+section .contentBox h2{
+font-size: 4rem;
+}
+section .contentBox a{
+width: 200px;
+margin-top: 0px;
+margin-bottom: 0px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 1.25rem;
+letter-spacing: 1.5px;
+padding: 15px;
+}
+section .imgBox img {
+margin-top: -55px;
+width: 700px;
+}
+section .wave {
+width: 1590px;
+}
+
+/* footer */
+footer {
+font-size: 1.5rem;
+}
+}
+/* **************************************************** */
+
+ /* extra large devices (large desktpos 1200px and up) */
+ @media (min-width: 1200px) {
+}
+
+/* on ne retraivaille pas car format de base destok */
